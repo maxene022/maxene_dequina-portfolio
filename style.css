@@ -1,0 +1,680 @@
+
+        /* General Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #060606;
+background-image: linear-gradient(180deg, #a9a9a9 0%, #2edbd4 50%, #af6262 100%);
+
+            color: #000000;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: url('bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0; /* Adjusted padding for better spacing */
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensures content doesn't overflow */
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 60, 114, 0.6); /* Added overlay to make text readable */
+            z-index: 1; /* Place it below the text */
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 2; /* Bring text above overlay */
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+nav {
+    background-color: #ffffff; /* White background for better contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* Padding for nav items */
+}
+
+.logo {
+    font-size: 24px;
+    color: #151e30; /* Logo color */
+    text-transform: uppercase; /* Uppercase for branding */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spacing between nav items */
+    margin: 0; /* Reset margin */
+}
+
+.nav-links li a {
+    color: #1e3c72; /* Text color */
+    text-decoration: none;
+    font-weight: 600; /* Bold for emphasis */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    padding: 8px 12px; /* Padding around links */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.nav-links li a:hover {
+    background-color: #2a5298; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #1e3c72; /* Color of hamburger bars */
+    margin: 4px 0; /* Spacing between bars */
+    transition: 0.3s; /* Smooth transition */
+}
+
+
+      /* About Section with Image */
+#about {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    padding: 100px 20px; /* Adjust padding for mobile */
+    
+
+}
+
+#about img {
+    max-width: 25%; /* Adjusts the maximum width for mobile */
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #fff; /* Circular white border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto; /* Ensures the aspect ratio is maintained */
+    margin: 0 auto 20px; /* Centers the image and adds spacing */
+}
+
+#about img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds a hover shadow */
+}
+
+.about-content {
+    max-width: 600px;
+    text-align: center; /* Center text on smaller screens */
+    padding: 200px;
+   
+    border-radius: 10px;
+    
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards; /* Animation for fade in */
+}
+
+.about-content h1 {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.about-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-content a {
+    color: #2a5298;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.about-content a:hover {
+    color: #1e3c72;
+    border-bottom: 2px solid #1e3c72; /* Underline effect on hover */
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styling */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+
+    border-radius: 15px;
+  
+    margin-top: 50px;
+}
+
+.section h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #1e3c72;
+    position: relative;
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+}
+
+.section h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #2a5298;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.section p {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #000000;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    font-weight: 400;
+}
+
+
+
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.project-item {
+    padding: 1.5rem;
+    background-color: #000000;
+background-image: linear-gradient(180deg, #a9a9a9 0%, #2edbd4 50%, #af6262 100%);
+
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.project-item:hover {
+    background-color: #e8f0fe; /* Light blue hover */
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.project-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.project-item .view-btn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-item .view-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Animation on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease;
+}
+
+
+        /* Footer styling */
+        footer {
+            
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #0a2656;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+        /* Contact Section */
+#contact {
+   
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+    
+    max-width: 1200px;
+    margin: 50px auto;
+    
+}
+
+#contact h1 {
+    font-size: 42px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+#contact h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #040f24;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact a {
+    color: #0a2656;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #1e3c72;
+}
+
+/* Social Media Links */
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media p {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    color: #0a2656;
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #1e3c72;
+    text-decoration: underline;
+}
+
+/* Form Styling (If you want to add a contact form) */
+.contact-form {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2a5298;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: #2a5298;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #1e3c72;
+}
+/* Basic styling for the resume link */
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0a233d;
+    transition: color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.resume-link i {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 20px; /* Icon size */
+}
+
+.resume-link:hover {
+    color: #0056b3; /* Darker blue when hovering */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.resume-link:active {
+    color: #003366; /* Dark blue when clicked */
+    transform: scale(0.98); /* Slightly shrink the link on click */
+}
+/* Skills Section Container */
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Skill Category Style */
+.skill-category {
+    background-color: #000000;
+    background-image: linear-gradient(180deg, #a9a9a9 0%, #2edbd4 50%, #af6262 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Fixed width for each skill category */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-category:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Skill Category Header */
+.skill-category h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center; /* Center the heading */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Capitalize the skill category */
+    letter-spacing: 1px;
+}
+
+/* Skill Category List */
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.skill-category ul li {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+/* Highlight the skills on hover */
+.skill-category ul li:hover {
+    color: #007BFF; /* Highlight with blue color on hover */
+    cursor: pointer;
+}
+
+/* Adding a fade-in effect for the skills section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animation for fading in contact section */
+@keyframes fadeInContact {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the contact section */
+#contact {
+    animation: fadeInContact 1s ease-out;
+}
+
+
+@media (max-width: 768px) {
+    #about img {
+        max-width: 60%;
+    }
+
+    .about-content h1 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 18px; /* Adjust font size for tablets and smaller screens */
+    }
+
+    .section h1 {
+        font-size: 32px;
+    }
+
+    #contact {
+        padding: 50px 20px;
+    }
+
+    #contact h1 {
+        font-size: 28px;
+    }
+
+    #contact p {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    /* Show the nav-links when .show class is added */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Hamburger bar styling */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+    /* Close button (X) styles */
+    .close-btn {
+        font-size: 30px;
+        color: #333;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    /* Header adjustments */
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+
+    footer a {
+        font-size: 14px;
+    }
+    .skills {
+        flex-direction: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .skill-category {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    .resume-link {
+        font-size: 14px; /* Smaller font size on smaller screens */
+        gap: 8px; /* Reduce the gap between the icon and the text */
+    }
+
+    .resume-link i {
+        font-size: 18px; /* Slightly smaller icon size */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content p {
+        font-size: 16px; /* Smaller font size for mobile devices */
+    }
+    .skills {
+        gap: 20px; /* Further reduced gap for mobile screens */
+    }
+
+    .skill-category {
+        width: 100%; /* Skill categories take full width on mobile */
+    }
+
+    .skill-category h3 {
+        font-size: 18px; /* Smaller font size for headings on mobile */
+    }
+
+    .skill-category ul li {
+        font-size: 14px; /* Smaller font size for skills on mobile */
+    }
+}
